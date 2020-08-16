@@ -1,0 +1,82 @@
+/* ----- Colors & Metrics ----- */
+
+$max-width: 1366px;
+
+$background: #fdfdfd;
+$background-lighter: lighten($background, 2.4%);
+
+$text: #101010;
+$secondary-text: rgba($text, 0.56);
+
+$divider: rgba($text, 0.02);
+$divider-lighter: rgba($text, 0.08);
+
+$primary: #1bda5e;
+$primary-contrast: #ffffff;
+
+/* ----- Mixins ----- */
+
+@mixin scale-animation($withFocus: true) {
+  transition: transform 100ms ease-out;
+
+  @if $withFocus {
+    &:focus {
+      transform: scale(1.08);
+    }
+  }
+
+  &:hover {
+    transform: scale(1.08);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}
+
+@mixin fade-animation-with-delay($quantity) {
+  animation: 250ms cubic-bezier(0.25, 0.25, 0.25, 1.25) both fade-in-animation;
+
+  @for $i from 1 to ($quantity + 1) {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 100ms};
+    }
+  }
+}
+
+@keyframes fade-in-animation {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Styles Reset ----- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Montserrat", "Sugoe UI", Roboto, sans-serif;
+
+  color: $text;
+}
+
+body button {
+  cursor: pointer;
+}
+
+body,
+#app {
+  background: $background;
+  height: 100%;
+}

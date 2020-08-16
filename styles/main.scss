@@ -1,0 +1,50 @@
+@import "base";
+@import "header";
+@import "playlists";
+
+div#app {
+  > main {
+    margin-top: 32px;
+
+    > section {
+      max-width: $max-width;
+      margin: 0 auto;
+      padding: 16px 16px 32px;
+
+      > header {
+        margin-bottom: 24px;
+
+        > div {
+          display: flex;
+          align-items: center;
+
+          justify-content: space-between;
+
+          > strong {
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 800;
+          }
+
+          > a {
+            @include scale-animation;
+
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.1px;
+            color: $secondary-text;
+            padding: 8px;
+          }
+        }
+
+        > p {
+          font-size: 15px;
+          line-height: 20px;
+          letter-spacing: 0.5px;
+          color: $secondary-text;
+        }
+      }
+    }
+  }
+}

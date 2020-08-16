@@ -1,0 +1,109 @@
+ul.playlists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+
+  > li {
+    @include fade-animation-with-delay(10);
+
+    width: 100%;
+    height: 100%;
+
+    &:focus,
+    &:hover {
+      > div {
+        transform: translateY(-2px);
+
+        > a {
+          border-color: $divider-lighter;
+        }
+
+        > button {
+          transform: scale(1);
+        }
+      }
+    }
+
+    > div {
+      width: inherit;
+      height: inherit;
+      position: relative;
+
+      transition: transform 100ms ease-out !important;
+
+      > a {
+        display: flex;
+        flex-direction: column;
+
+        height: 100%;
+        padding: 16px;
+        background: $background-lighter;
+        border: 1px solid $divider;
+        border-radius: 6px;
+
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+        transition: border-color 100ms ease-out, transform 100ms ease-out;
+
+        &:active {
+          transform: scale(0.98);
+        }
+
+        > img {
+          width: 100%;
+          height: 180px;
+          border-radius: inherit;
+          object-fit: cover;
+        }
+
+        > strong {
+          font-size: 20px;
+          margin-top: 8px;
+          width: 100%;
+
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        > span {
+          font-size: 12px;
+          margin-top: 8px;
+
+          color: $secondary-text;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      > button {
+        @include scale-animation($withFocus: false);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+        border: 0;
+        background: $primary;
+        box-shadow: 1px 1.5px 2px rgba(0, 0, 0, 0.3);
+
+        transform: scale(0);
+
+        > i {
+          color: $primary-contrast;
+        }
+      }
+    }
+  }
+}
