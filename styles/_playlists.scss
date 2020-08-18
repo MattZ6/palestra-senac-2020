@@ -29,7 +29,7 @@ ul.playlists {
       height: inherit;
       position: relative;
 
-      transition: transform 100ms ease-out !important;
+      transition: transform 100ms ease-out;
 
       > a {
         display: flex;
