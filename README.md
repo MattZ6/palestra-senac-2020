@@ -5,6 +5,14 @@
 > Projeto construído como exemplo para o evento Palestras de TI, do [SENAC Portão](https://www.pr.senac.br/principal/?uep=46), no dia 17 de agosto de 2020.
 
 
+<img src="github/light.png" alt="Aplicação com tema claro ☀" title="Aplicação com tema claro ☀" />
+
+<br />
+<br />
+
+<img src="github/dark.png" alt="Aplicação com tema escuro 🌙" title="Aplicação com tema escuro 🌙" />
+
+
 ### 💡 Você vai precisar
 
 - Primeiramente de uma **xícara de café** bem quentinho ☕;
