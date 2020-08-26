@@ -8,7 +8,6 @@
 <img src="github/light.png" alt="Aplicação com tema claro ☀" title="Aplicação com tema claro ☀" />
 
 <br />
-<br />
 
 <img src="github/dark.png" alt="Aplicação com tema escuro 🌙" title="Aplicação com tema escuro 🌙" />
 
