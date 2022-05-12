@@ -67,6 +67,10 @@ ul.playlists {
         transition-timing-function: ease-out;
         transition-property: border-color, transform, outline-color;
 
+        &::selection {
+          background-color: transparent;
+        }
+
         &:active {
           transform: scale(0.98);
         }
