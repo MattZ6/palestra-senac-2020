@@ -1,6 +1,7 @@
 @import "base";
 @import "header";
 @import "playlists";
+@import "footer";
 
 div#app {
   > main {
@@ -24,6 +25,10 @@ div#app {
             font-size: 24px;
             line-height: 32px;
             font-weight: 800;
+
+            @media screen and (max-width: 680px) {
+              font-size: 20px;
+            }
           }
 
           > a {
@@ -55,6 +60,10 @@ div#app {
           line-height: 20px;
           letter-spacing: 0.5px;
           color: $secondary-text;
+
+          @media screen and (max-width: 680px) {
+            font-size: 14px;
+          }
         }
       }
     }
