@@ -35,6 +35,18 @@ div#app {
             letter-spacing: 1.1px;
             color: $secondary-text;
             padding: 8px;
+
+            border-radius: 32px;
+
+            outline: 2px solid transparent;
+            outline-offset: 4px;
+
+            transition-property: transform, outline-color, color;
+
+            &:focus-visible {
+              outline-color: $text;
+              color: $text;
+            }
           }
         }
 

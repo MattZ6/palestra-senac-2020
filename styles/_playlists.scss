@@ -3,13 +3,28 @@ ul.playlists {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
 
+  @media screen and (max-width: 680px) {
+    display: flex;
+    overflow: auto hidden;
+    scroll-snap-type: x mandatory;
+
+    padding: 2px 16px;
+    margin: -2px -16px;
+  }
+
   > li {
     @include fade-animation-with-delay(10);
 
     width: 100%;
     height: 100%;
+ 
+    scroll-snap-align: center;
 
-    &:focus,
+    @media screen and (max-width: 680px) {
+      width: 240px;
+    }
+
+    &:focus-within,
     &:hover {
       > div {
         transform: translateY(-2px);
@@ -43,10 +58,19 @@ ul.playlists {
 
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 
-        transition: border-color 100ms ease-out, transform 100ms ease-out;
+        outline: 2px solid transparent;
+        outline-offset: 4px;
+
+        transition-duration: 100ms;
+        transition-timing-function: ease-out;
+        transition-property: border-color, transform, outline-color;
 
         &:active {
           transform: scale(0.98);
+        }
+
+        &:focus-visible {
+          outline-color: $text;
         }
 
         > img {
@@ -54,6 +78,9 @@ ul.playlists {
           height: 180px;
           border-radius: inherit;
           object-fit: cover;
+
+          pointer-events: none;
+          user-select: none;
         }
 
         > strong {
@@ -91,17 +118,25 @@ ul.playlists {
         bottom: 16px;
         right: 16px;
 
-        width: 36px;
-        height: 36px;
-        border-radius: 18px;
+        $size: 40px;
+
+        width: $size;
+        height: $size;
+        border-radius: $size;
         border: 0;
+        
         background: $primary;
         box-shadow: 1px 1.5px 2px rgba(0, 0, 0, 0.3);
 
         transform: scale(0);
 
+        @media screen and (max-width: 680px) {
+          transform: scale(1);
+        }
+
         > i {
           color: $primary-contrast;
+          user-select: none;
         }
       }
     }
